@@ -1,6 +1,0 @@
-name: UltraLimit
-description: UltraLimit
-main: PlayerLimit
-softdepend: [Vault, ProtocolLib]
-version: 1.0.1
-author: DarkKnights22
