@@ -1,0 +1,3 @@
+limit-size: 1
+#This is the amount of slots that will be added to the max, for example, if
+#there are no people online, and you have this set to 5, it will show `0/5`
