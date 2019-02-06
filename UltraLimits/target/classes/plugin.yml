@@ -1,0 +1,6 @@
+name: UltraLimits
+description: UltraLimits
+main: PlayerLimit
+softdepend: [ServerListPlus]
+version: 1.0.2
+author: DarkKnights22
