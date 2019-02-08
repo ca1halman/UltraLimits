@@ -2,3 +2,5 @@
 .project/
 UltraLimitss.iml
 .classpath
+target/
+*.class

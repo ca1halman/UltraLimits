@@ -1,5 +1,7 @@
 import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
+import java.nio.file.Files;
 import java.util.logging.Level;
 
 import net.md_5.bungee.api.ServerPing;
@@ -26,10 +28,19 @@ public class PlayerLimitBungee extends Plugin implements Listener {
     }
 
     public void configMain() throws IOException {
+        if (!getDataFolder().exists())
+            getDataFolder().mkdir();
+
         File configFile = new File(getDataFolder(), "config.yml");
+
         if (!configFile.exists()) {
-            config = ConfigurationProvider.getProvider(YamlConfiguration.class).load(configFile);
+            try (InputStream in = getResourceAsStream("config.yml")) {
+                Files.copy(in, configFile.toPath());
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
         }
+        config = ConfigurationProvider.getProvider(YamlConfiguration.class).load(configFile);
     }
 
     @EventHandler
